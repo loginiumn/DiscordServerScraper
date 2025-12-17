@@ -471,6 +471,175 @@
             border: 2px solid #ff0000;
         }
 
+        /* Profile Display Styles */
+        .profile-display {
+            background: #000;
+            border: 3px solid #ff0000;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
+            color: white;
+            display: none;
+        }
+
+        .profile-banner {
+            height: 100px;
+            background: linear-gradient(90deg, #ff0000, #990000);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .profile-content {
+            padding: 20px;
+            position: relative;
+        }
+
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border: 3px solid #000;
+            border-radius: 50%;
+            position: absolute;
+            top: -40px;
+            left: 20px;
+            background: linear-gradient(135deg, #333, #000);
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-info {
+            margin-left: 90px;
+            min-height: 80px;
+        }
+
+        .profile-info h3 {
+            color: #fff;
+            margin: 0 0 5px 0;
+            font-size: 1.3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .profile-details {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .profile-badge {
+            background: #ff0000;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .profile-id {
+            color: #aaa;
+            font-size: 0.85rem;
+            font-family: monospace;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .profile-stat {
+            text-align: center;
+        }
+
+        .stat-label {
+            display: block;
+            color: #ccc;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            display: block;
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .stat-color {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 5px auto 0;
+            border: 2px solid #fff;
+        }
+
+        .profile-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+        }
+
+        .badge-nitro {
+            background: linear-gradient(90deg, #9c27b0, #e91e63);
+        }
+
+        .badge-bot {
+            background: #5865f2;
+        }
+
+        .badge-staff {
+            background: #ff9900;
+        }
+
+        .badge-partner {
+            background: #9c27b0;
+        }
+
+        .badge-verified {
+            background: #00b894;
+        }
+
+        /* Token toggle button */
+        .token-toggle-btn {
+            margin-top: 8px;
+            padding: 10px;
+            background: #000;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .token-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+        }
+
+        .token-toggle-btn.active {
+            background: #ff0000;
+            color: #ffffff;
+            border-color: #ff0000;
+        }
+
         @media (max-width: 768px) {
             .main-content {
                 flex-direction: column;
@@ -491,6 +660,17 @@
             .member-preview {
                 max-height: 400px;
             }
+            
+            .profile-avatar {
+                width: 60px;
+                height: 60px;
+                top: -30px;
+                left: 15px;
+            }
+            
+            .profile-info {
+                margin-left: 70px;
+            }
         }
     </style>
 </head>
@@ -508,11 +688,34 @@
             <div class="panel">
                 <h2 class="panel-title"><i class="fas fa-tools"></i> Setup & Config</h2>
                 
+                <div class="profile-display" id="profileDisplay" style="display: none;">
+                    <div class="profile-banner" id="profileBanner"></div>
+                    <div class="profile-content">
+                        <div class="profile-avatar" id="profileAvatar"></div>
+                        <div class="profile-info">
+                            <h3 id="profileUsername">Loading...</h3>
+                            <div class="profile-details">
+                                <span class="profile-badge" id="profileBadges"></span>
+                                <span class="profile-id">ID: <span id="profileUserId"></span></span>
+                            </div>
+                            <div class="profile-stats">
+                                <div class="profile-stat">
+                                    <span class="stat-label">Member #</span>
+                                    <span class="stat-value" id="profileMemberNumber">0</span>
+                                </div>
+                                <div class="profile-stat">
+                                    <span class="stat-label">Accent</span>
+                                    <span class="stat-color" id="profileAccentColor"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="warning-box">
                     <i class="fas fa-exclamation-circle"></i>
                     <div>
                         <strong>Heads up:</strong> A browser-based tool that lets you export member lists from the Discord servers you're part of, and it supports various file formats
-
                     </div>
                 </div>
 
@@ -533,42 +736,11 @@
                     </label>
                     <input type="password" class="input-field" id="discordToken" placeholder="Paste your token here">
                     <span class="small-text">Remove the quotation marks from the token value.</span>
-                    <button type="button" class="btn" id="toggleTokenVisibility" aria-pressed="false" data-visible="false" style="margin-top: 8px; padding: 10px; background: #000; color: #ff0000; border: 2px solid #ff0000;">
+                    <button type="button" id="toggleTokenVisibility" class="token-toggle-btn">
                         <i class="fas fa-eye"></i> Show Token (Off)
                     </button>
-
-            <script>
-                (function(){
-                    const tokenInput = document.getElementById('discordToken');
-                    const toggleBtn = document.getElementById('toggleTokenVisibility');
-                    let isVisible = false;
-
-                    function updateButton() {
-                        toggleBtn.setAttribute('aria-pressed', isVisible ? 'true' : 'false');
-                        toggleBtn.dataset.visible = isVisible ? 'true' : 'false';
-                        tokenInput.type = isVisible ? 'text' : 'password';
-                        toggleBtn.innerHTML = `<i class="fas fa-${isVisible ? 'eye-slash' : 'eye'}"></i> ${isVisible ? 'Hide Token (On)' : 'Show Token (Off)'}`;
-                        if (isVisible) {
-                            toggleBtn.style.background = '#ff0000';
-                            toggleBtn.style.color = '#ffffff';
-                            toggleBtn.style.borderColor = '#ff0000';
-                        } else {
-                            toggleBtn.style.background = '#000';
-                            toggleBtn.style.color = '#ff0000';
-                            toggleBtn.style.borderColor = '#ff0000';
-                        }
-                    }
-
-                    toggleBtn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        isVisible = !isVisible;
-                        updateButton();
-                    });
-
-                    updateButton();
-                })();
-            </script>
                 </div>
+
                 <div class="input-box">
                     <label class="input-label">
                         <i class="fas fa-server"></i> Server ID
@@ -625,20 +797,20 @@
                     </div>
                 </div>
 
-<div class="format-selector">
-    <div class="format-btn active" data-format="json">
-        <i class="fas fa-code"></i> JSON
-    </div>
-    <div class="format-btn" data-format="csv">
-        <i class="fas fa-table"></i> CSV
-    </div>
-    <div class="format-btn" data-format="html">
-        <i class="fas fa-file-code"></i> HTML
-    </div>
-    <div class="format-btn" data-format="txt">
-        <i class="fas fa-file-alt"></i> TXT
-    </div>
-</div>
+                <div class="format-selector">
+                    <div class="format-btn active" data-format="json">
+                        <i class="fas fa-code"></i> JSON
+                    </div>
+                    <div class="format-btn" data-format="csv">
+                        <i class="fas fa-table"></i> CSV
+                    </div>
+                    <div class="format-btn" data-format="html">
+                        <i class="fas fa-file-code"></i> HTML
+                    </div>
+                    <div class="format-btn" data-format="txt">
+                        <i class="fas fa-file-alt"></i> TXT
+                    </div>
+                </div>
 
                 <textarea class="output-area" id="outputData" placeholder="Your member data will show up here once fetched..." readonly></textarea>
 
@@ -656,15 +828,15 @@
             </div>
         </div>
 
-       <div class="disclaimer">
-    <h3><i class="fas fa-gavel"></i> Important Details.</h3>
-    <p style="margin-bottom: 15px; color: #fff;"><strong>This tool serves multiple purposes. Use responsibly:</strong></p>
-    <ul class="disclaimer-list">
-        <li>Archive and backup your server data</li>
-        <li>Useful for investigative or operational analysis</li>
-        <li>Track member activity and server growth</li>
-        <li>Supports token-based authentication.</li>
-    </ul>
+        <div class="disclaimer">
+            <h3><i class="fas fa-gavel"></i> Important Details.</h3>
+            <p style="margin-bottom: 15px; color: #fff;"><strong>This tool serves multiple purposes. Use responsibly:</strong></p>
+            <ul class="disclaimer-list">
+                <li>Archive and backup your server data</li>
+                <li>Useful for investigative or operational analysis</li>
+                <li>Track member activity and server growth</li>
+                <li>Supports token-based authentication.</li>
+            </ul>
             
             <div class="final-warning">
                 <i class="fas fa-radiation-alt"></i> 
@@ -692,6 +864,8 @@
         const errorMsg = document.getElementById('errorMsg');
         const successText = document.getElementById('successText');
         const errorText = document.getElementById('errorText');
+        const toggleTokenBtn = document.getElementById('toggleTokenVisibility');
+        const profileDisplay = document.getElementById('profileDisplay');
 
         formatBtns.forEach(btn => {
             btn.addEventListener('click', function() {
@@ -700,6 +874,17 @@
                 currentFormat = this.getAttribute('data-format');
                 refreshOutput();
             });
+        });
+
+        toggleTokenBtn.addEventListener('click', function() {
+            const tokenInput = document.getElementById('discordToken');
+            const isVisible = tokenInput.type === 'password';
+            
+            tokenInput.type = isVisible ? 'text' : 'password';
+            this.classList.toggle('active', isVisible);
+            this.innerHTML = isVisible 
+                ? '<i class="fas fa-eye-slash"></i> Hide Token (On)' 
+                : '<i class="fas fa-eye"></i> Show Token (Off)';
         });
 
         scrapeBtn.addEventListener('click', async function() {
@@ -732,7 +917,7 @@
             try {
                 await grabMembers(token, serverId);
             } catch (err) {
-                showError(err.message || 'API Error occurred while fetching members');
+                showError(err.message || 'Something went sideways');
             } finally {
                 stopLoading();
             }
@@ -741,6 +926,66 @@
         exportBtn.addEventListener('click', function() {
             saveToFile();
         });
+
+        async function displayUserProfile(token) {
+            try {
+                const response = await fetch('https://discord.com/api/v9/users/@me', {
+                    headers: { 'Authorization': token }
+                });
+                
+                if (!response.ok) throw new Error('Failed to fetch user data');
+                
+                const userData = await response.json();
+                
+                profileDisplay.style.display = 'block';
+                
+                document.getElementById('profileUsername').textContent = 
+                    `${userData.username}${userData.discriminator !== '0' ? '#' + userData.discriminator : ''}`;
+                
+                document.getElementById('profileUserId').textContent = userData.id;
+                
+                if (userData.avatar) {
+                    const avatarUrl = `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png?size=256`;
+                    document.getElementById('profileAvatar').style.backgroundImage = `url("${avatarUrl}")`;
+                }
+                
+                if (userData.banner) {
+                    const bannerUrl = `https://cdn.discordapp.com/banners/${userData.id}/${userData.banner}.png?size=600`;
+                    document.getElementById('profileBanner').style.backgroundImage = `url("${bannerUrl}")`;
+                }
+                
+                if (userData.accent_color) {
+                    const colorEl = document.getElementById('profileAccentColor');
+                    colorEl.style.backgroundColor = `#${userData.accent_color.toString(16).padStart(6, '0')}`;
+                    colorEl.title = `#${userData.accent_color.toString(16).padStart(6, '0')}`;
+                }
+                
+                document.getElementById('profileMemberNumber').textContent = 
+                    `#${userData.id.slice(-4)}`;
+                
+                const badges = [];
+                if (userData.premium_type && userData.premium_type > 0) {
+                    badges.push('<span class="profile-badge badge-nitro">NITRO</span>');
+                }
+                if (userData.bot) {
+                    badges.push('<span class="profile-badge badge-bot">BOT</span>');
+                }
+                if (userData.public_flags) {
+                    if (userData.public_flags & (1 << 0)) badges.push('<span class="profile-badge badge-staff">STAFF</span>');
+                    if (userData.public_flags & (1 << 1)) badges.push('<span class="profile-badge badge-partner">PARTNER</span>');
+                    if (userData.public_flags & (1 << 16)) badges.push('<span class="profile-badge badge-verified">VERIFIED</span>');
+                }
+                
+                document.getElementById('profileBadges').innerHTML = badges.join(' ');
+                
+                showSuccess(`Authenticated as: ${userData.username}#${userData.discriminator}`);
+                
+                return userData;
+            } catch (error) {
+                console.error('Profile display error:', error);
+                return null;
+            }
+        }
 
         async function grabMembers(token, guildId) {
             currentMembers = [];
@@ -761,7 +1006,7 @@
                 }
 
                 const userData = await testAuth.json();
-                showSuccess(`Authenticated as: ${userData.username}#${userData.discriminator}`);
+                await displayUserProfile(token);
 
                 progressBox.style.display = 'block';
                 updateProgress(0, 100);
@@ -777,7 +1022,7 @@
                     showPreview();
                     showSuccess(`Got ${currentMembers.length} members via WebSocket`);
                 } else {
-                    throw new Error('No members retrieved via WebSocket....');
+                    throw new Error('No members retrieved via WebSocket');
                 }
 
             } catch (err) {
@@ -1048,7 +1293,7 @@
                 let avatarHtml = `<div class="member-avatar">${firstLetter}</div>`;
                 
                 if (member.avatar_hash) {
-                    const avatarUrl = `https://cdn.discordapp.com/avatars/${member.id}/${member.avatar_hash}.png?size=64`;
+                    const avatarUrl = `https://cdn.discordapp.com/avatars/${member.id}/${member.avatar_hash}.png?size=128`;
                     avatarHtml = `
                         <div class="member-avatar">
                             <img src="${avatarUrl}" alt="${displayName}" class="member-avatar-img" 
@@ -1099,6 +1344,8 @@
                 outputText = makeCSV();
             } else if (currentFormat === 'html') {
                 outputText = makeHTML();
+            } else if (currentFormat === 'txt') {
+                outputText = makeTXT();
             }
             
             outputArea.value = outputText;
@@ -1106,10 +1353,11 @@
         }
 
         function makeCSV() {
-            const headers = ['Username', 'ID', 'Tag', 'Display Name', 'Bot', 'Joined Date', 'Roles', 'Boosting Since'];
+            const headers = ['ID', 'Username', 'Tag', 'Display Name', 'Bot', 'Joined Date', 'Roles', 'Boosting Since'];
             const rows = currentMembers.map(member => [
                 member.id,
                 `"${member.username}"`,
+                member.tag,
                 `"${member.nickname || member.global_name || member.username}"`,
                 member.is_bot ? 'Yes' : 'No',
                 member.joined,
@@ -1118,6 +1366,25 @@
             ]);
             
             return [headers.join(','), ...rows.map(row => row.join(','))].join('\n');
+        }
+
+        function makeTXT() {
+            let text = `Discord Member List Export\n`;
+            text += `Generated: ${new Date().toLocaleString()}\n`;
+            text += `Total Members: ${currentMembers.length}\n`;
+            text += '='.repeat(50) + '\n\n';
+
+            currentMembers.forEach((member, index) => {
+                text += `${index + 1}. ${member.username}#${member.tag} (ID: ${member.id})\n`;
+                text += `   Display Name: ${member.nickname || member.global_name || member.username}\n`;
+                text += `   Bot: ${member.is_bot ? 'Yes' : 'No'}\n`;
+                text += `   Joined: ${formatDate(member.joined)}\n`;
+                text += `   Roles: ${member.roles.length > 0 ? member.roles.join(', ') : 'None'}\n`;
+                text += `   Boosting: ${member.boosting ? 'Yes' : 'No'}\n`;
+                text += '\n';
+            });
+
+            return text;
         }
 
         function makeHTML() {
@@ -1261,13 +1528,11 @@
             } else if (currentFormat === 'html') {
                 mime = 'text/html';
                 ext = 'html';
-                
             } else if (currentFormat === 'txt') {
-                    mime = 'text/plain';
-                    ext = 'txt';
-                }
-        
-
+                mime = 'text/plain';
+                ext = 'txt';
+            }
+            
             const blob = new Blob([data], { type: mime });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -1335,10 +1600,6 @@
             if (memberCountElement) {
                 memberCountElement.textContent = '0 Members';
             }
-        }
-
-        function sleep(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
         }
 
         document.addEventListener('DOMContentLoaded', function() {
