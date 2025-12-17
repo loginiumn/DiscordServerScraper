@@ -533,10 +533,41 @@
                     </label>
                     <input type="password" class="input-field" id="discordToken" placeholder="Paste your token here">
                     <span class="small-text">Remove the quotation marks from the token value.</span>
-                    <button class="btn" id="toggleTokenVisibility" style="margin-top: 8px; padding: 10px; background: #000; color: #ff0000; border: 2px solid #ff0000;">
-                        <i class="fas fa-eye"></i> Show Token
+                    <button type="button" class="btn" id="toggleTokenVisibility" aria-pressed="false" data-visible="false" style="margin-top: 8px; padding: 10px; background: #000; color: #ff0000; border: 2px solid #ff0000;">
+                        <i class="fas fa-eye"></i> Show Token (Off)
                     </button>
-            </button>
+
+            <script>
+                (function(){
+                    const tokenInput = document.getElementById('discordToken');
+                    const toggleBtn = document.getElementById('toggleTokenVisibility');
+                    let isVisible = false;
+
+                    function updateButton() {
+                        toggleBtn.setAttribute('aria-pressed', isVisible ? 'true' : 'false');
+                        toggleBtn.dataset.visible = isVisible ? 'true' : 'false';
+                        tokenInput.type = isVisible ? 'text' : 'password';
+                        toggleBtn.innerHTML = `<i class="fas fa-${isVisible ? 'eye-slash' : 'eye'}"></i> ${isVisible ? 'Hide Token (On)' : 'Show Token (Off)'}`;
+                        if (isVisible) {
+                            toggleBtn.style.background = '#ff0000';
+                            toggleBtn.style.color = '#ffffff';
+                            toggleBtn.style.borderColor = '#ff0000';
+                        } else {
+                            toggleBtn.style.background = '#000';
+                            toggleBtn.style.color = '#ff0000';
+                            toggleBtn.style.borderColor = '#ff0000';
+                        }
+                    }
+
+                    toggleBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        isVisible = !isVisible;
+                        updateButton();
+                    });
+
+                    updateButton();
+                })();
+            </script>
                 </div>
                 <div class="input-box">
                     <label class="input-label">
