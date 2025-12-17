@@ -471,7 +471,6 @@
             border: 2px solid #ff0000;
         }
 
-        /* Profile Display Styles */
         .profile-display {
             background: #000;
             border: 3px solid #ff0000;
@@ -615,7 +614,6 @@
             background: #00b894;
         }
 
-        /* Token toggle button */
         .token-toggle-btn {
             margin-top: 8px;
             padding: 10px;
@@ -638,6 +636,50 @@
             background: #ff0000;
             color: #ffffff;
             border-color: #ff0000;
+        }
+
+        .secondary-btn {
+            background: linear-gradient(to bottom, #333, #000);
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: linear-gradient(to bottom, #444, #111);
+        }
+
+        .search-box {
+            margin-bottom: 15px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #000;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background: #fff;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .filter-btn {
+            flex: 1;
+            padding: 8px;
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .filter-btn.active {
+            background: #000;
+            color: #fff;
         }
 
         @media (max-width: 768px) {
@@ -797,6 +839,17 @@
                     </div>
                 </div>
 
+                <div class="search-box" style="display: none;" id="searchBox">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search members...">
+                </div>
+
+                <div class="filter-buttons" style="display: none;" id="filterButtons">
+                    <div class="filter-btn active" data-filter="all">All</div>
+                    <div class="filter-btn" data-filter="users">Users Only</div>
+                    <div class="filter-btn" data-filter="bots">Bots Only</div>
+                    <div class="filter-btn" data-filter="boosters">Boosters</div>
+                </div>
+
                 <div class="format-selector">
                     <div class="format-btn active" data-format="json">
                         <i class="fas fa-code"></i> JSON
@@ -866,6 +919,12 @@
         const errorText = document.getElementById('errorText');
         const toggleTokenBtn = document.getElementById('toggleTokenVisibility');
         const profileDisplay = document.getElementById('profileDisplay');
+        const searchBox = document.getElementById('searchBox');
+        const searchInput = document.getElementById('searchInput');
+        const filterButtons = document.getElementById('filterButtons');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        let currentFilter = 'all';
+        let filteredMembers = [];
 
         formatBtns.forEach(btn => {
             btn.addEventListener('click', function() {
@@ -886,6 +945,21 @@
                 ? '<i class="fas fa-eye-slash"></i> Hide Token (On)' 
                 : '<i class="fas fa-eye"></i> Show Token (Off)';
         });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.getAttribute('data-filter');
+                applyFilters();
+            });
+        });
+
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                applyFilters();
+            });
+        }
 
         scrapeBtn.addEventListener('click', async function() {
             const tokenInput = document.getElementById('discordToken').value.trim();
@@ -1266,10 +1340,40 @@
             updateMemberCards();
         }
 
+        function applyFilters() {
+            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+            
+            filteredMembers = currentMembers.filter(member => {
+                const displayName = (member.nickname || member.global_name || member.username).toLowerCase();
+                const username = member.username.toLowerCase();
+                const matchesSearch = searchTerm === '' || 
+                    displayName.includes(searchTerm) || 
+                    username.includes(searchTerm) ||
+                    member.id.includes(searchTerm);
+                
+                if (!matchesSearch) return false;
+                
+                switch(currentFilter) {
+                    case 'users':
+                        return !member.is_bot;
+                    case 'bots':
+                        return member.is_bot;
+                    case 'boosters':
+                        return member.boosting !== null;
+                    default:
+                        return true;
+                }
+            });
+            
+            updateMemberCards();
+        }
+
         function updateMemberCards() {
             previewList.innerHTML = '';
             
-            if (currentMembers.length === 0) {
+            const membersToShow = searchInput && searchInput.value ? filteredMembers : currentMembers;
+            
+            if (membersToShow.length === 0) {
                 memberPreview.style.display = 'none';
                 return;
             }
@@ -1277,12 +1381,12 @@
             const header = document.createElement('div');
             header.className = 'preview-header';
             header.innerHTML = `
-                <h3 style="margin: 0; color: #000;">All Members (${currentMembers.length})</h3>
-                <div class="member-count">${currentMembers.length} Members</div>
+                <h3 style="margin: 0; color: #000;">All Members (${membersToShow.length})</h3>
+                <div class="member-count">${membersToShow.length} Members</div>
             `;
             previewList.appendChild(header);
             
-            currentMembers.forEach(member => {
+            membersToShow.forEach(member => {
                 const card = document.createElement('div');
                 card.className = 'member-card';
                 
@@ -1293,7 +1397,7 @@
                 let avatarHtml = `<div class="member-avatar">${firstLetter}</div>`;
                 
                 if (member.avatar_hash) {
-                    const avatarUrl = `https://cdn.discordapp.com/avatars/${member.id}/${member.avatar_hash}.png?size=128`;
+                    const avatarUrl = `https://cdn.discordapp.com/avatars/${member.id}/${member.avatar_hash}.png?size=64`;
                     avatarHtml = `
                         <div class="member-avatar">
                             <img src="${avatarUrl}" alt="${displayName}" class="member-avatar-img" 
@@ -1326,6 +1430,8 @@
             });
             
             memberPreview.style.display = 'block';
+            if (searchBox) searchBox.style.display = 'block';
+            if (filterButtons) filterButtons.style.display = 'flex';
             previewList.scrollTop = 0;
         }
 
@@ -1353,15 +1459,14 @@
         }
 
         function makeCSV() {
-            const headers = ['ID', 'Username', 'Tag', 'Display Name', 'Bot', 'Joined Date', 'Roles', 'Boosting Since'];
+            const headers = ['ID', 'Username', 'Display Name', 'Bot', 'Joined Date', 'Roles', 'Boosting Since'];
             const rows = currentMembers.map(member => [
                 member.id,
                 `"${member.username}"`,
-                member.tag,
                 `"${member.nickname || member.global_name || member.username}"`,
                 member.is_bot ? 'Yes' : 'No',
                 member.joined,
-                `"${member.roles.join(', ')}"`,
+                `"${(member.roles || []).join(', ')}"`,
                 member.boosting || ''
             ]);
             
@@ -1369,22 +1474,35 @@
         }
 
         function makeTXT() {
-            let text = `Discord Member List Export\n`;
-            text += `Generated: ${new Date().toLocaleString()}\n`;
-            text += `Total Members: ${currentMembers.length}\n`;
-            text += '='.repeat(50) + '\n\n';
+            let txt = `Discord Server Member List
+Generated by DiscordServerScraper
+Date: ${new Date().toLocaleString()}
+========================================
+
+Total Members: ${currentMembers.length}
+Bots: ${currentMembers.filter(m => m.is_bot).length}
+Unique Roles: ${roleSet.size}
+
+MEMBERS LIST:
+========================================
+`;
 
             currentMembers.forEach((member, index) => {
-                text += `${index + 1}. ${member.username}#${member.tag} (ID: ${member.id})\n`;
-                text += `   Display Name: ${member.nickname || member.global_name || member.username}\n`;
-                text += `   Bot: ${member.is_bot ? 'Yes' : 'No'}\n`;
-                text += `   Joined: ${formatDate(member.joined)}\n`;
-                text += `   Roles: ${member.roles.length > 0 ? member.roles.join(', ') : 'None'}\n`;
-                text += `   Boosting: ${member.boosting ? 'Yes' : 'No'}\n`;
-                text += '\n';
+                const displayName = member.nickname || member.global_name || member.username;
+                const tagShow = member.tag !== '0' ? '#' + member.tag : '';
+                
+                txt += `${index + 1}. ${displayName}${tagShow}\n`;
+                txt += `   ID: ${member.id}\n`;
+                txt += `   Bot: ${member.is_bot ? 'Yes' : 'No'}\n`;
+                txt += `   Joined: ${formatDate(member.joined)}\n`;
+                txt += `   Roles: ${member.roles.length > 0 ? member.roles.join(', ') : 'None'}\n`;
+                if (member.boosting) {
+                    txt += `   Boosting since: ${formatDate(member.boosting)}\n`;
+                }
+                txt += '\n';
             });
 
-            return text;
+            return txt;
         }
 
         function makeHTML() {
@@ -1532,7 +1650,7 @@
                 mime = 'text/plain';
                 ext = 'txt';
             }
-            
+
             const blob = new Blob([data], { type: mime });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -1564,6 +1682,8 @@
 
         function showPreview() {
             memberPreview.style.display = 'block';
+            if (searchBox) searchBox.style.display = 'block';
+            if (filterButtons) filterButtons.style.display = 'flex';
         }
 
         function showSuccess(msg) {
@@ -1581,6 +1701,7 @@
 
         function resetDisplay() {
             currentMembers = [];
+            filteredMembers = [];
             roleSet = new Set();
             outputArea.value = '';
             previewList.innerHTML = '';
@@ -1590,6 +1711,19 @@
             successMsg.style.display = 'none';
             errorMsg.style.display = 'none';
             exportBtn.disabled = true;
+            
+            if (searchBox) {
+                searchBox.style.display = 'none';
+                searchInput.value = '';
+            }
+            if (filterButtons) {
+                filterButtons.style.display = 'none';
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+                currentFilter = 'all';
+            }
+            
+            profileDisplay.style.display = 'none';
             
             document.getElementById('totalCount').textContent = '0';
             document.getElementById('botCount').textContent = '0';
@@ -1609,6 +1743,13 @@
             testBtn.innerHTML = '<i class="fas fa-vial"></i> Load Test Data';
             testBtn.onclick = loadSample;
             document.querySelector('.panel:first-child').appendChild(testBtn);
+            
+            const clearBtn = document.createElement('button');
+            clearBtn.className = 'btn secondary-btn';
+            clearBtn.style.marginTop = '10px';
+            clearBtn.innerHTML = '<i class="fas fa-trash"></i> Clear All Data';
+            clearBtn.onclick = resetDisplay;
+            document.querySelector('.panel:first-child').appendChild(clearBtn);
         });
 
         function loadSample() {
