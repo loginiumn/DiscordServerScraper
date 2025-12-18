@@ -12,19 +12,16 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
             background: #fff;
             color: #111;
             line-height: 1.6;
         }
-
         .wrapper {
             max-width: 1300px;
             margin: 0 auto;
             padding: 20px;
         }
-
         .top-bar {
             background: #000;
             color: #fff;
@@ -34,7 +31,6 @@
             margin-bottom: 30px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
-
         .title {
             font-size: 2.8rem;
             font-weight: 800;
@@ -43,29 +39,25 @@
             align-items: center;
             gap: 15px;
         }
-
         .title i {
             color: #ff0000;
         }
-
         .title-text {
             background: linear-gradient(90deg, #ff0000, #cc0000);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         .byline {
             font-size: 1.1rem;
             color: #ff6666;
             font-weight: 500;
         }
-
         .main-content {
             display: flex;
             gap: 30px;
             flex-wrap: wrap;
         }
-
         .panel {
             flex: 1;
             min-width: 300px;
@@ -75,7 +67,6 @@
             padding: 30px;
             box-shadow: 5px 5px 0 #000;
         }
-
         .panel-title {
             font-size: 1.5rem;
             color: #000;
@@ -86,7 +77,6 @@
             align-items: center;
             gap: 10px;
         }
-
         .warning-box {
             background: #ffe6e6;
             border: 2px solid #ff0000;
@@ -96,17 +86,14 @@
             display: flex;
             gap: 15px;
         }
-
         .warning-box i {
             color: #ff0000;
             font-size: 1.5rem;
             margin-top: 3px;
         }
-
         .input-box {
             margin-bottom: 25px;
         }
-
         .input-label {
             display: block;
             font-weight: 600;
@@ -114,7 +101,6 @@
             color: #222;
             font-size: 0.95rem;
         }
-
         .input-field {
             width: 100%;
             padding: 16px;
@@ -124,20 +110,17 @@
             background: #fff;
             transition: all 0.3s;
         }
-
         .input-field:focus {
             outline: none;
             border-color: #ff0000;
             box-shadow: 0 0 0 3px rgba(255,0,0,0.1);
         }
-
         .small-text {
             font-size: 0.85rem;
             color: #666;
             margin-top: 6px;
             display: block;
         }
-
         .step-list {
             background: #fff;
             border: 2px solid #000;
@@ -145,16 +128,13 @@
             padding: 20px;
             margin-bottom: 25px;
         }
-
         .step-list ol {
             padding-left: 25px;
         }
-
         .step-list li {
             margin-bottom: 12px;
             color: #333;
         }
-
         .btn {
             display: block;
             width: 100%;
@@ -170,26 +150,22 @@
             transition: all 0.3s;
             margin-top: 10px;
         }
-
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 7px 15px rgba(255,0,0,0.2);
         }
-
         .btn:disabled {
             background: #666;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
-
         .stats-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin-bottom: 25px;
         }
-
         .stat-box {
             background: #000;
             color: #fff;
@@ -198,27 +174,23 @@
             text-align: center;
             border: 2px solid #ff0000;
         }
-
         .stat-number {
             font-size: 2.2rem;
             font-weight: 800;
             color: #ff0000;
             margin-bottom: 5px;
         }
-
         .stat-label {
             font-size: 0.9rem;
             color: #ccc;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         .format-selector {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
         }
-
         .format-btn {
             flex: 1;
             padding: 12px;
@@ -230,17 +202,14 @@
             font-weight: 500;
             transition: all 0.3s;
         }
-
         .format-btn:hover {
             background: #ffe6e6;
         }
-
         .format-btn.active {
             background: #ff0000;
             color: #fff;
             border-color: #ff0000;
         }
-
         .output-area {
             width: 100%;
             height: 200px;
@@ -253,13 +222,11 @@
             resize: vertical;
             margin-bottom: 15px;
         }
-
         .loading {
             display: none;
             text-align: center;
             padding: 30px;
         }
-
         .spinner {
             border: 4px solid rgba(0,0,0,0.1);
             border-top: 4px solid #ff0000;
@@ -269,12 +236,10 @@
             animation: spin 1s linear infinite;
             margin: 0 auto 15px;
         }
-
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
         .progress-box {
             background: #fff;
             border: 2px solid #000;
@@ -283,7 +248,6 @@
             margin-top: 20px;
             display: none;
         }
-
         .progress-bar {
             height: 10px;
             background: #e0e0e0;
@@ -291,20 +255,17 @@
             overflow: hidden;
             margin-bottom: 10px;
         }
-
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, #ff0000, #cc0000);
             width: 0%;
             transition: width 0.5s;
         }
-
         .progress-text {
             text-align: center;
             font-weight: 500;
             color: #333;
         }
-
         .message-box {
             padding: 15px;
             border-radius: 8px;
@@ -313,17 +274,14 @@
             align-items: center;
             gap: 12px;
         }
-
         .message-box.success {
             background: #e6ffe6;
             border: 2px solid #00cc00;
         }
-
         .message-box.error {
             background: #ffe6e6;
             border: 2px solid #ff0000;
         }
-
         .member-preview {
             max-height: 500px;
             overflow-y: auto;
@@ -334,7 +292,6 @@
             padding: 15px;
             background: #fff;
         }
-        
         .member-card {
             background: #fff;
             border: 2px solid #000;
@@ -346,12 +303,10 @@
             gap: 15px;
             transition: all 0.3s;
         }
-        
         .member-card:hover {
             transform: translateX(5px);
             border-color: #ff0000;
         }
-        
         .member-avatar {
             width: 50px;
             height: 50px;
@@ -366,36 +321,30 @@
             overflow: hidden;
             background: linear-gradient(135deg, #ff0000, #990000);
         }
-        
         .member-avatar-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
         .member-details {
             flex: 1;
         }
-        
         .member-name {
             font-weight: 600;
             color: #000;
             margin-bottom: 3px;
         }
-        
         .member-id {
             font-size: 0.85rem;
             color: #666;
             font-family: monospace;
         }
-        
         .member-roles {
             margin-top: 5px;
             display: flex;
             flex-wrap: wrap;
             gap: 5px;
         }
-        
         .role-tag {
             background: #000;
             color: #ff0000;
@@ -404,7 +353,6 @@
             font-size: 0.7rem;
             font-weight: bold;
         }
-        
         .bot-badge {
             background: #ff0000;
             color: white;
@@ -413,7 +361,6 @@
             font-size: 0.7rem;
             margin-left: 8px;
         }
-        
         .preview-header {
             display: flex;
             justify-content: space-between;
@@ -422,7 +369,6 @@
             padding-bottom: 10px;
             border-bottom: 2px solid #ff0000;
         }
-        
         .member-count {
             background: #000;
             color: #ff0000;
@@ -431,7 +377,55 @@
             font-weight: bold;
             font-size: 0.9rem;
         }
-
+        .server-list-container {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 25px;
+            border: 2px solid #000;
+            border-radius: 8px;
+            display: none;
+        }
+        .server-item {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s;
+        }
+        .server-item:hover {
+            background: #ffe6e6;
+        }
+        .server-item:last-child {
+            border-bottom: none;
+        }
+        .server-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 2px solid #000;
+            background: linear-gradient(135deg, #ff0000, #990000);
+        }
+        .server-info {
+            flex: 1;
+        }
+        .server-name {
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 3px;
+        }
+        .server-id {
+            font-size: 0.85rem;
+            color: #666;
+            font-family: monospace;
+        }
         .disclaimer {
             background: #000;
             color: #fff;
@@ -440,7 +434,6 @@
             margin-top: 40px;
             border-top: 5px solid #ff0000;
         }
-
         .disclaimer h3 {
             color: #ff0000;
             margin-bottom: 15px;
@@ -449,17 +442,14 @@
             align-items: center;
             gap: 10px;
         }
-
         .disclaimer-list {
             margin-left: 20px;
             margin-bottom: 20px;
         }
-
         .disclaimer-list li {
             margin-bottom: 8px;
             color: #ccc;
         }
-
         .final-warning {
             background: #990000;
             color: white;
@@ -470,19 +460,17 @@
             margin-top: 15px;
             border: 2px solid #ff0000;
         }
-
         .profile-display {
-            background: #000;
-            border: 3px solid #ff0000;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
-            color: white;
-            display: none;
+           background: #990000;
+           border: 3px solid #ff0000;
+           border-radius: 12px;
+           overflow: hidden;
+           margin-bottom: 25px;
+           box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
+           color: white;
+           display: none;
         }
-
-        .profile-banner {
+      .profile-banner {
             height: 100px;
             background: linear-gradient(90deg, #ff0000, #990000);
             background-size: cover;
@@ -594,124 +582,43 @@
             background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
         }
 
-        .badge-nitro {
-            background: linear-gradient(90deg, #9c27b0, #e91e63);
-        }
-
-        .badge-bot {
-            background: #5865f2;
-        }
-
-        .badge-staff {
-            background: #ff9900;
-        }
-
-        .badge-partner {
-            background: #9c27b0;
-        }
-
-        .badge-verified {
-            background: #00b894;
-        }
-
         .token-toggle-btn {
-            margin-top: 8px;
+            display: block;
+            width: 100%;
             padding: 10px;
             background: #000;
             color: #ff0000;
             border: 2px solid #ff0000;
-            width: 100%;
-            border-radius: 8px;
-            cursor: pointer;
+            border-radius: 6px;
             font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
             transition: all 0.3s;
         }
 
         .token-toggle-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
-        }
-
-        .token-toggle-btn.active {
             background: #ff0000;
-            color: #ffffff;
-            border-color: #ff0000;
-        }
-
-        .secondary-btn {
-            background: linear-gradient(to bottom, #333, #000);
-            color: white;
-        }
-
-        .secondary-btn:hover {
-            background: linear-gradient(to bottom, #444, #111);
-        }
-
-        .search-box {
-            margin-bottom: 15px;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #000;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            background: #fff;
-        }
-
-        .filter-buttons {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .filter-btn {
-            flex: 1;
-            padding: 8px;
-            background: #fff;
-            border: 2px solid #000;
-            border-radius: 6px;
-            text-align: center;
-            cursor: pointer;
-            font-size: 0.85rem;
-        }
-
-        .filter-btn.active {
-            background: #000;
             color: #fff;
         }
-
+        
         @media (max-width: 768px) {
             .main-content {
                 flex-direction: column;
             }
-            
             .panel {
                 min-width: 100%;
             }
-            
             .stats-container {
                 grid-template-columns: 1fr;
             }
-            
             .title {
                 font-size: 2rem;
             }
-            
             .member-preview {
                 max-height: 400px;
             }
-            
-            .profile-avatar {
-                width: 60px;
-                height: 60px;
-                top: -30px;
-                left: 15px;
-            }
-            
-            .profile-info {
-                margin-left: 70px;
+            .server-list-container {
+                max-height: 300px;
             }
         }
     </style>
@@ -723,55 +630,29 @@
                 <i class="fas fa-users"></i>
                 <span class="title-text">DiscordServerScraper</span>
             </div>
-            <div class="byline">Made by Kerosene</div>
         </div>
 
         <div class="main-content">
             <div class="panel">
                 <h2 class="panel-title"><i class="fas fa-tools"></i> Setup & Config</h2>
                 
-                <div class="profile-display" id="profileDisplay" style="display: none;">
-                    <div class="profile-banner" id="profileBanner"></div>
-                    <div class="profile-content">
-                        <div class="profile-avatar" id="profileAvatar"></div>
-                        <div class="profile-info">
-                            <h3 id="profileUsername">Loading...</h3>
-                            <div class="profile-details">
-                                <span class="profile-badge" id="profileBadges"></span>
-                                <span class="profile-id">ID: <span id="profileUserId"></span></span>
-                            </div>
-                            <div class="profile-stats">
-                                <div class="profile-stat">
-                                    <span class="stat-label">Member #</span>
-                                    <span class="stat-value" id="profileMemberNumber">0</span>
-                                </div>
-                                <div class="profile-stat">
-                                    <span class="stat-label">Accent</span>
-                                    <span class="stat-color" id="profileAccentColor"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="warning-box">
                     <i class="fas fa-exclamation-circle"></i>
                     <div>
-                        <strong>Heads up:</strong> A browser-based tool that lets you export member lists from the Discord servers you're part of, and it supports various file formats
+                        <strong>Tool Information: </strong >A browser-based tool that lets you export Discord server member lists using DTA.
                     </div>
                 </div>
 
                 <div class="step-list">
-                    <p><strong>Quick guide to get started:</strong></p>
+                    <p><strong>Quick guide:</strong></p>
                     <ol>
-                        <li>Log into Discord on your browser</li>
-                        <li>Open Dev Tools (F12) → Application tab</li>
-                        <li>Find "token" in Local Storage for discord.com</li>
-                        <li>Copy just the token value (no quotes)</li>
-                        <li>Turn on Developer Mode in Discord settings to get Server ID</li>
+                        <li>Get your Discord token</li>
+                        <li>Fetch your servers</li>
+                        <li>Select a server or enter Server ID</li>
+                        <li>Get member list</li>
+                        <li>Export in desired format</li>
                     </ol>
                 </div>
-
                 <div class="input-box">
                     <label class="input-label">
                         <i class="fas fa-key"></i> Discord Token
@@ -781,13 +662,27 @@
                     <button type="button" id="toggleTokenVisibility" class="token-toggle-btn">
                         <i class="fas fa-eye"></i> Show Token (Off)
                     </button>
-                </div>
 
                 <div class="input-box">
                     <label class="input-label">
-                        <i class="fas fa-server"></i> Server ID
+                        <i class="fas fa-key"></i> Discord Token
                     </label>
-                    <input type="text" class="input-field" id="serverId" placeholder="Your server's ID goes here">
+                    <input type="text" class="input-field" id="discordToken" placeholder="Paste your token here">
+                    <span class="small-text">Remove quotation marks from token value.</span>
+                </div>
+
+                <button class="btn" id="fetchServersBtn">
+                    <i class="fas fa-list"></i> Fetch Your Servers
+                </button>
+
+                <div class="server-list-container" id="serverListContainer"></div>
+
+                <div class="input-box">
+                    <label class="input-label">
+                        <i class="fas fa-server"></i> Server ID (Optional)
+                    </label>
+                    <input type="text" class="input-field" id="serverId" placeholder="Paste your Server ID here">
+                    <span class="small-text">Pick from the list of Discord servers you choose.</span>
                 </div>
 
                 <button class="btn" id="scrapeBtn">
@@ -796,14 +691,14 @@
 
                 <div class="loading" id="loading">
                     <div class="spinner"></div>
-                    <p>Grabbing member data from Discord...</p>
+                    <p>Fetching member data...</p>
                 </div>
 
                 <div class="progress-box" id="progressBox">
                     <div class="progress-bar">
                         <div class="progress-fill" id="progressFill"></div>
                     </div>
-                    <div class="progress-text" id="progressText">Starting up...</div>
+                    <div class="progress-text" id="progressText">Starting...</div>
                 </div>
 
                 <div class="message-box success" id="successMsg">
@@ -831,23 +726,12 @@
                     </div>
                     <div class="stat-box">
                         <div class="stat-number" id="roleCount">0</div>
-                        <div class="stat-label">Unique Roles</div>
+                        <div class="stat-label">Roles</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-number" id="onlineEst">0</div>
                         <div class="stat-label">Estimated Online</div>
                     </div>
-                </div>
-
-                <div class="search-box" style="display: none;" id="searchBox">
-                    <input type="text" class="search-input" id="searchInput" placeholder="Search members...">
-                </div>
-
-                <div class="filter-buttons" style="display: none;" id="filterButtons">
-                    <div class="filter-btn active" data-filter="all">All</div>
-                    <div class="filter-btn" data-filter="users">Users Only</div>
-                    <div class="filter-btn" data-filter="bots">Bots Only</div>
-                    <div class="filter-btn" data-filter="boosters">Boosters</div>
                 </div>
 
                 <div class="format-selector">
@@ -860,12 +744,9 @@
                     <div class="format-btn" data-format="html">
                         <i class="fas fa-file-code"></i> HTML
                     </div>
-                    <div class="format-btn" data-format="txt">
-                        <i class="fas fa-file-alt"></i> TXT
-                    </div>
                 </div>
 
-                <textarea class="output-area" id="outputData" placeholder="Your member data will show up here once fetched..." readonly></textarea>
+                <textarea class="output-area" id="outputData" placeholder="Member data will appear here..." readonly></textarea>
 
                 <button class="btn" id="exportBtn" disabled>
                     <i class="fas fa-file-download"></i> Download Data
@@ -882,13 +763,13 @@
         </div>
 
         <div class="disclaimer">
-            <h3><i class="fas fa-gavel"></i> Important Details.</h3>
-            <p style="margin-bottom: 15px; color: #fff;"><strong>This tool serves multiple purposes. Use responsibly:</strong></p>
+            <h3><i class="fas fa-gavel"></i> Important Details</h3>
+            <p style="margin-bottom: 15px; color: #fff;"><strong>Use responsibly:</strong></p>
             <ul class="disclaimer-list">
-                <li>Archive and backup your server data</li>
+                <li>Archive and backup server data</li>
                 <li>Useful for investigative or operational analysis</li>
-                <li>Track member activity and server growth</li>
-                <li>Supports token-based authentication.</li>
+                <li>Member Activity</li>
+                <li>Supports DTA.</li>
             </ul>
             
             <div class="final-warning">
@@ -898,44 +779,44 @@
         </div>
     </div>
 
-    <script>
-        let currentMembers = [];
-        let currentFormat = 'json';
-        let roleSet = new Set();
-        const formatBtns = document.querySelectorAll('.format-btn');
-        const scrapeBtn = document.getElementById('scrapeBtn');
-        const exportBtn = document.getElementById('exportBtn');
-        const loadingEl = document.getElementById('loading');
-        const progressBox = document.getElementById('progressBox');
-        const progressFill = document.getElementById('progressFill');
-        const progressText = document.getElementById('progressText');
-        const outputArea = document.getElementById('outputData');
-        const previewList = document.getElementById('previewList');
-        const memberPreview = document.getElementById('memberPreview');
-        const statsContainer = document.getElementById('statsContainer');
-        const successMsg = document.getElementById('successMsg');
-        const errorMsg = document.getElementById('errorMsg');
-        const successText = document.getElementById('successText');
-        const errorText = document.getElementById('errorText');
-        const toggleTokenBtn = document.getElementById('toggleTokenVisibility');
-        const profileDisplay = document.getElementById('profileDisplay');
-        const searchBox = document.getElementById('searchBox');
-        const searchInput = document.getElementById('searchInput');
-        const filterButtons = document.getElementById('filterButtons');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        let currentFilter = 'all';
-        let filteredMembers = [];
+<script>
+let currentMembers = [];
+let currentFormat = 'json';
+let roleSet = new Set();
+let discordToken = '';
 
-        formatBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                formatBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                currentFormat = this.getAttribute('data-format');
-                refreshOutput();
-            });
-        });
+const formatBtns = document.querySelectorAll('.format-btn');
+const scrapeBtn = document.getElementById('scrapeBtn');
+const fetchServersBtn = document.getElementById('fetchServersBtn');
+const exportBtn = document.getElementById('exportBtn');
+const loadingEl = document.getElementById('loading');
+const progressBox = document.getElementById('progressBox');
+const progressFill = document.getElementById('progressFill');
+const progressText = document.getElementById('progressText');
+const outputArea = document.getElementById('outputData');
+const previewList = document.getElementById('previewList');
+const memberPreview = document.getElementById('memberPreview');
+const serverListContainer = document.getElementById('serverListContainer');
+const successMsg = document.getElementById('successMsg');
+const errorMsg = document.getElementById('errorMsg');
+const successText = document.getElementById('successText');
+const errorText = document.getElementById('errorText');
+    const toggleTokenBtn = document.getElementById('toggleTokenVisibility');
+const serverIdInput = document.getElementById('serverId');
+const tokenInput = document.getElementById('discordToken');
 
-        toggleTokenBtn.addEventListener('click', function() {
+tokenInput.addEventListener('input', function() {
+    discordToken = this.value.trim();
+});
+
+formatBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        formatBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentFormat = this.getAttribute('data-format');
+        refreshOutput();
+    });
+      toggleTokenBtn.addEventListener('click', function() {
             const tokenInput = document.getElementById('discordToken');
             const isVisible = tokenInput.type === 'password';
             
@@ -945,862 +826,401 @@
                 ? '<i class="fas fa-eye-slash"></i> Hide Token (On)' 
                 : '<i class="fas fa-eye"></i> Show Token (Off)';
         });
+});
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                currentFilter = this.getAttribute('data-filter');
-                applyFilters();
-            });
-        });
-
-        if (searchInput) {
-            searchInput.addEventListener('input', function() {
-                applyFilters();
-            });
-        }
-
-        scrapeBtn.addEventListener('click', async function() {
-            const tokenInput = document.getElementById('discordToken').value.trim();
-            const serverId = document.getElementById('serverId').value.trim();
-
-            if (!tokenInput) {
-                showError('Need a Discord token to proceed');
-                return;
-            }
-            if (!serverId) {
-                showError('Gotta have a Server ID');
-                return;
-            }
-
-            let token = tokenInput;
-            
-            if (token.startsWith('"') && token.endsWith('"')) {
-                token = token.slice(1, -1);
-            }
-            
-            if (!token.startsWith('mfa.') && !token.startsWith('MT') && !token.startsWith('ND')) {
-                showError('Token format looks incorrect. Should start with mfa., MT, or ND');
-                return;
-            }
-
-            resetDisplay();
-            startLoading();
-
-            try {
-                await grabMembers(token, serverId);
-            } catch (err) {
-                showError(err.message || 'Something went sideways');
-            } finally {
-                stopLoading();
-            }
-        });
-
-        exportBtn.addEventListener('click', function() {
-            saveToFile();
-        });
-
-        async function displayUserProfile(token) {
-            try {
-                const response = await fetch('https://discord.com/api/v9/users/@me', {
-                    headers: { 'Authorization': token }
-                });
-                
-                if (!response.ok) throw new Error('Failed to fetch user data');
-                
-                const userData = await response.json();
-                
-                profileDisplay.style.display = 'block';
-                
-                document.getElementById('profileUsername').textContent = 
-                    `${userData.username}${userData.discriminator !== '0' ? '#' + userData.discriminator : ''}`;
-                
-                document.getElementById('profileUserId').textContent = userData.id;
-                
-                if (userData.avatar) {
-                    const avatarUrl = `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png?size=256`;
-                    document.getElementById('profileAvatar').style.backgroundImage = `url("${avatarUrl}")`;
-                }
-                
-                if (userData.banner) {
-                    const bannerUrl = `https://cdn.discordapp.com/banners/${userData.id}/${userData.banner}.png?size=600`;
-                    document.getElementById('profileBanner').style.backgroundImage = `url("${bannerUrl}")`;
-                }
-                
-                if (userData.accent_color) {
-                    const colorEl = document.getElementById('profileAccentColor');
-                    colorEl.style.backgroundColor = `#${userData.accent_color.toString(16).padStart(6, '0')}`;
-                    colorEl.title = `#${userData.accent_color.toString(16).padStart(6, '0')}`;
-                }
-                
-                document.getElementById('profileMemberNumber').textContent = 
-                    `#${userData.id.slice(-4)}`;
-                
-                const badges = [];
-                if (userData.premium_type && userData.premium_type > 0) {
-                    badges.push('<span class="profile-badge badge-nitro">NITRO</span>');
-                }
-                if (userData.bot) {
-                    badges.push('<span class="profile-badge badge-bot">BOT</span>');
-                }
-                if (userData.public_flags) {
-                    if (userData.public_flags & (1 << 0)) badges.push('<span class="profile-badge badge-staff">STAFF</span>');
-                    if (userData.public_flags & (1 << 1)) badges.push('<span class="profile-badge badge-partner">PARTNER</span>');
-                    if (userData.public_flags & (1 << 16)) badges.push('<span class="profile-badge badge-verified">VERIFIED</span>');
-                }
-                
-                document.getElementById('profileBadges').innerHTML = badges.join(' ');
-                
-                showSuccess(`Authenticated as: ${userData.username}#${userData.discriminator}`);
-                
-                return userData;
-            } catch (error) {
-                console.error('Profile display error:', error);
-                return null;
-            }
-        }
-
-        async function grabMembers(token, guildId) {
-            currentMembers = [];
-            roleSet = new Set();
-
-            const headers = {
-                'Authorization': token,
-                'Content-Type': 'application/json'
-            };
-
-            try {
-                const testAuth = await fetch('https://discord.com/api/v9/users/@me', {
-                    headers: headers
-                });
-
-                if (!testAuth.ok) {
-                    throw new Error(`Token invalid: ${testAuth.status}`);
-                }
-
-                const userData = await testAuth.json();
-                await displayUserProfile(token);
-
-                progressBox.style.display = 'block';
-                updateProgress(0, 100);
-                showSuccess('Connecting to Discord Gateway...');
-
-                const members = await connectToGatewayAndGetMembers(token, guildId);
-                
-                if (members && members.length > 0) {
-                    currentMembers = members;
-                    updateProgress(100, 100);
-                    updateStats();
-                    refreshOutput();
-                    showPreview();
-                    showSuccess(`Got ${currentMembers.length} members via WebSocket`);
-                } else {
-                    throw new Error('No members retrieved via WebSocket');
-                }
-
-            } catch (err) {
-                throw new Error(`Failed: ${err.message}`);
-            }
-        }
-
-        async function connectToGatewayAndGetMembers(token, guildId) {
-            return new Promise((resolve, reject) => {
-                let socket = null;
-                let heartbeatInterval = null;
-                let members = [];
-                let timeout = null;
-                let memberChunksReceived = new Set();
-                let totalChunksExpected = 0;
-                let totalMembersExpected = 0;
-                let requestId = Math.floor(Math.random() * 1000000);
-                
-                const cleanup = () => {
-                    if (heartbeatInterval) clearInterval(heartbeatInterval);
-                    if (socket) socket.close();
-                    if (timeout) clearTimeout(timeout);
-                };
-                
-                timeout = setTimeout(() => {
-                    cleanup();
-                    if (members.length > 0) {
-                        resolve(members);
-                    } else {
-                        reject(new Error('WebSocket connection timeout'));
-                    }
-                }, 60000);
-                
-                fetch('https://discord.com/api/v9/gateway', {
-                    headers: { 'Authorization': token }
-                })
-                .then(res => res.json())
-                .then(gatewayData => {
-                    const wsUrl = `${gatewayData.url}?v=9&encoding=json`;
-                    socket = new WebSocket(wsUrl);
-                    
-                    socket.onopen = () => {
-                        showSuccess('WebSocket connected');
-                    };
-                    
-                    socket.onmessage = (event) => {
-                        try {
-                            const data = JSON.parse(event.data);
-                            
-                            if (data.op === 10) {
-                                const heartbeatMs = data.d.heartbeat_interval;
-                                
-                                socket.send(JSON.stringify({
-                                    op: 2,
-                                    d: {
-                                        token: token,
-                                        properties: {
-                                            $os: "windows",
-                                            $browser: "chrome",
-                                            $device: ""
-                                        },
-                                        compress: false,
-                                        large_threshold: 250,
-                                        guilds: [],
-                                        presence: {
-                                            status: "online",
-                                            since: 0,
-                                            activities: [],
-                                            afk: false
-                                        }
-                                    }
-                                }));
-                                
-                                heartbeatInterval = setInterval(() => {
-                                    if (socket.readyState === WebSocket.OPEN) {
-                                        socket.send(JSON.stringify({ op: 1, d: null }));
-                                    }
-                                }, heartbeatMs);
-                                
-                            } else if (data.t === 'READY') {
-                                showSuccess('Gateway ready, requesting member list...');
-                                
-                                socket.send(JSON.stringify({
-                                    op: 8,
-                                    d: {
-                                        guild_id: guildId,
-                                        query: "",
-                                        limit: 0,
-                                        presences: true,
-                                        user_ids: [],
-                                        nonce: `members_${requestId}`
-                                    }
-                                }));
-                                
-                            } else if (data.t === 'GUILD_MEMBERS_CHUNK') {
-                                const chunkIndex = data.d.chunk_index || 0;
-                                const chunkCount = data.d.chunk_count || 1;
-                                const nonce = data.d.nonce || '';
-                                
-                                if (nonce.includes(`members_${requestId}`)) {
-                                    if (totalChunksExpected === 0) {
-                                        totalChunksExpected = chunkCount;
-                                        totalMembersExpected = data.d.member_count || 0;
-                                        showSuccess(`Receiving ${totalMembersExpected} members in ${chunkCount} chunks...`);
-                                    }
-                                    
-                                    if (!memberChunksReceived.has(chunkIndex)) {
-                                        memberChunksReceived.add(chunkIndex);
-                                        
-                                        data.d.members.forEach(member => {
-                                            if (member.user) {
-                                                if (member.roles) {
-                                                    member.roles.forEach(role => roleSet.add(role));
-                                                }
-                                                
-                                                members.push({
-                                                    id: member.user.id,
-                                                    username: member.user.username,
-                                                    tag: member.user.discriminator,
-                                                    global_name: member.user.global_name,
-                                                    avatar_hash: member.user.avatar,
-                                                    is_bot: member.user.bot || false,
-                                                    nickname: member.nick || null,
-                                                    joined: member.joined_at,
-                                                    roles: member.roles || [],
-                                                    boosting: member.premium_since,
-                                                    pending: member.pending || false
-                                                });
-                                            }
-                                        });
-                                        
-                                        const progressValue = Math.min(memberChunksReceived.size / totalChunksExpected, 1);
-                                        const memberProgress = Math.min(members.length / Math.max(totalMembersExpected, members.length * 2), 1);
-                                        const combinedProgress = (progressValue + memberProgress) / 2;
-                                        
-                                        updateProgress(Math.floor(combinedProgress * 100), 100);
-                                        showSuccess(`Chunk ${chunkIndex + 1}/${chunkCount}: ${members.length} members so far`);
-                                        
-                                        if (memberChunksReceived.size >= totalChunksExpected) {
-                                            setTimeout(() => {
-                                                cleanup();
-                                                clearTimeout(timeout);
-                                                resolve(members);
-                                            }, 1000);
-                                        }
-                                    }
-                                }
-                                
-                            } else if (data.t === 'GUILD_CREATE') {
-                                if (data.d.id === guildId) {
-                                    const guildMembers = data.d.members || [];
-                                    
-                                    guildMembers.forEach(member => {
-                                        if (member.user) {
-                                            if (member.roles) {
-                                                member.roles.forEach(role => roleSet.add(role));
-                                            }
-                                            
-                                            members.push({
-                                                id: member.user.id,
-                                                username: member.user.username,
-                                                tag: member.user.discriminator,
-                                                global_name: member.user.global_name,
-                                                avatar_hash: member.user.avatar,
-                                                is_bot: member.user.bot || false,
-                                                nickname: member.nick || null,
-                                                joined: member.joined_at,
-                                                roles: member.roles || [],
-                                                boosting: member.premium_since,
-                                                pending: member.pending || false
-                                            });
-                                        }
-                                    });
-                                    
-                                    const estimatedCount = data.d.member_count || members.length * 3;
-                                    updateProgress(Math.min(members.length / estimatedCount * 100, 100), 100);
-                                    
-                                    if (members.length >= estimatedCount * 0.9 || members.length > 100) {
-                                        setTimeout(() => {
-                                            cleanup();
-                                            clearTimeout(timeout);
-                                            resolve(members);
-                                        }, 1000);
-                                    }
-                                }
-                            }
-                            
-                        } catch (err) {
-                            console.error('WebSocket error:', err);
-                        }
-                    };
-                    
-                    socket.onerror = (error) => {
-                        cleanup();
-                        if (members.length > 0) {
-                            clearTimeout(timeout);
-                            resolve(members);
-                        } else {
-                            reject(new Error(`WebSocket error: ${error.message}`));
-                        }
-                    };
-                    
-                    socket.onclose = () => {
-                        cleanup();
-                        if (members.length > 0) {
-                            clearTimeout(timeout);
-                            resolve(members);
-                        } else {
-                            reject(new Error('WebSocket closed without data'));
-                        }
-                    };
-                    
-                })
-                .catch(err => {
-                    cleanup();
-                    reject(new Error(`Gateway fetch failed: ${err.message}`));
-                });
-            });
-        }
-
-        function updateProgress(now, total) {
-            const percent = Math.min((now / total) * 100, 100);
-            progressFill.style.width = `${percent}%`;
-            progressText.textContent = `Grabbed ${now} of ${total} (${Math.round(percent)}%)`;
-        }
-
-        function updateStats() {
-            const botTotal = currentMembers.filter(m => m.is_bot).length;
-            const onlineGuess = Math.floor(currentMembers.length * 0.3);
-            
-            document.getElementById('totalCount').textContent = currentMembers.length;
-            document.getElementById('botCount').textContent = botTotal;
-            document.getElementById('roleCount').textContent = roleSet.size;
-            document.getElementById('onlineEst').textContent = onlineGuess;
-            
-            const memberCountElement = document.getElementById('memberCount');
-            if (memberCountElement) {
-                memberCountElement.textContent = `${currentMembers.length} Members`;
-            }
-            
-            updateMemberCards();
-        }
-
-        function applyFilters() {
-            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
-            
-            filteredMembers = currentMembers.filter(member => {
-                const displayName = (member.nickname || member.global_name || member.username).toLowerCase();
-                const username = member.username.toLowerCase();
-                const matchesSearch = searchTerm === '' || 
-                    displayName.includes(searchTerm) || 
-                    username.includes(searchTerm) ||
-                    member.id.includes(searchTerm);
-                
-                if (!matchesSearch) return false;
-                
-                switch(currentFilter) {
-                    case 'users':
-                        return !member.is_bot;
-                    case 'bots':
-                        return member.is_bot;
-                    case 'boosters':
-                        return member.boosting !== null;
-                    default:
-                        return true;
-                }
-            });
-            
-            updateMemberCards();
-        }
-
-        function updateMemberCards() {
-            previewList.innerHTML = '';
-            
-            const membersToShow = searchInput && searchInput.value ? filteredMembers : currentMembers;
-            
-            if (membersToShow.length === 0) {
-                memberPreview.style.display = 'none';
-                return;
-            }
-            
-            const header = document.createElement('div');
-            header.className = 'preview-header';
-            header.innerHTML = `
-                <h3 style="margin: 0; color: #000;">All Members (${membersToShow.length})</h3>
-                <div class="member-count">${membersToShow.length} Members</div>
+fetchServersBtn.addEventListener('click', async function() {
+    if (!discordToken) {
+        showError('Enter your Discord token first');
+        return;
+    }
+    
+    startLoading();
+    serverListContainer.innerHTML = '';
+    
+    try {
+        const servers = await fetchUserServersAPI(discordToken);
+        
+        if (servers.length === 0) {
+            serverListContainer.innerHTML = `
+                <div style="padding: 20px; text-align: center; color: #666;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>No servers found</p>
+                </div>
             `;
-            previewList.appendChild(header);
+            serverListContainer.style.display = 'block';
+            showError('No servers found with this token');
+            return;
+        }
+        
+        servers.forEach(server => {
+            const serverItem = document.createElement('div');
+            serverItem.className = 'server-item';
+            serverItem.innerHTML = `
+                <div class="server-icon">
+                    ${server.icon ? 
+                        `<img src="https://cdn.discordapp.com/icons/${server.id}/${server.icon}.png?size=64" 
+                              class="member-avatar-img">` : 
+                        server.name.charAt(0).toUpperCase()}
+                </div>
+                <div class="server-info">
+                    <div class="server-name">${server.name}</div>
+                    <div class="server-id">ID: ${server.id}</div>
+                </div>
+            `;
             
-            membersToShow.forEach(member => {
-                const card = document.createElement('div');
-                card.className = 'member-card';
-                
-                const firstLetter = member.username?.charAt(0).toUpperCase() || '?';
-                const displayName = member.nickname || member.global_name || member.username;
-                const tagShow = member.tag !== '0' ? `#${member.tag}` : '';
-                
-                let avatarHtml = `<div class="member-avatar">${firstLetter}</div>`;
-                
-                if (member.avatar_hash) {
-                    const avatarUrl = `https://cdn.discordapp.com/avatars/${member.id}/${member.avatar_hash}.png?size=64`;
-                    avatarHtml = `
-                        <div class="member-avatar">
-                            <img src="${avatarUrl}" alt="${displayName}" class="member-avatar-img" 
-                                 onerror="this.parentElement.innerHTML='${firstLetter}'; this.parentElement.style.background='linear-gradient(135deg, #ff0000, #990000)';">
-                        </div>
-                    `;
-                }
-                
-                const rolesHtml = member.roles && member.roles.length > 0 
-                    ? `<div class="member-roles">${member.roles.slice(0, 3).map(role => `<span class="role-tag">Role ${role.slice(0, 6)}</span>`).join('')}${member.roles.length > 3 ? ` +${member.roles.length - 3} more` : ''}</div>`
-                    : '';
-                
-                card.innerHTML = `
-                    ${avatarHtml}
-                    <div class="member-details">
-                        <div class="member-name">
-                            ${displayName}${tagShow}
-                            ${member.is_bot ? '<span class="bot-badge">BOT</span>' : ''}
-                            ${member.boosting ? '<span style="background: #9c27b0; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px;">BOOST</span>' : ''}
-                        </div>
-                        <div class="member-id">
-                            ID: ${member.id} | Joined: ${formatDate(member.joined)}
-                            ${member.pending ? ' | <span style="color: #ff9900;">Pending</span>' : ''}
-                        </div>
-                        ${rolesHtml}
-                    </div>
-                `;
-                
-                previewList.appendChild(card);
+            serverItem.addEventListener('click', () => {
+                serverIdInput.value = server.id;
+                serverListContainer.querySelectorAll('.server-item').forEach(item => {
+                    item.style.background = '';
+                });
+                serverItem.style.background = '#ffe6e6';
+                showSuccess(`Selected: ${server.name}`);
             });
             
-            memberPreview.style.display = 'block';
-            if (searchBox) searchBox.style.display = 'block';
-            if (filterButtons) filterButtons.style.display = 'flex';
-            previewList.scrollTop = 0;
-        }
+            serverListContainer.appendChild(serverItem);
+        });
+        
+        serverListContainer.style.display = 'block';
+        showSuccess(`Found ${servers.length} servers`);
+        
+    } catch (err) {
+        showError(err.message);
+    } finally {
+        stopLoading();
+    }
+});
 
-        function refreshOutput() {
-            if (currentMembers.length === 0) {
-                outputArea.value = '';
-                exportBtn.disabled = true;
-                return;
+async function fetchUserServersAPI(token) {
+    try {
+        const headers = {
+            'Authorization': token,
+            'Content-Type': 'application/json'
+        };
+        
+        const res = await fetch('https://discord.com/api/v9/users/@me/guilds', { headers });
+        
+        if (!res.ok) {
+            throw new Error(`API Error: ${res.status}`);
+        }
+        
+        const servers = await res.json();
+        return servers.map(guild => ({
+            id: guild.id,
+            name: guild.name,
+            icon: guild.icon,
+            owner: guild.owner
+        }));
+        
+    } catch (err) {
+        throw new Error('Failed to fetch servers');
+    }
+}
+
+scrapeBtn.addEventListener('click', async function() {
+    const serverId = serverIdInput.value.trim();
+    
+    if (!serverId) {
+        showError('Enter Server ID or select from list');
+        return;
+    }
+    
+    if (!discordToken) {
+        showError('Enter your Discord token first');
+        return;
+    }
+    
+    resetDisplay();
+    startLoading();
+    progressBox.style.display = 'block';
+    
+    try {
+        await grabMembers(serverId);
+    } catch (err) {
+        showError(err.message);
+    } finally {
+        stopLoading();
+    }
+});
+
+async function grabMembers(guildId) {
+    currentMembers = [];
+    roleSet = new Set();
+    
+    try {
+        updateProgress(0, 100);
+        showSuccess('Starting member fetch...');
+        
+        const apiMembers = await fetchMembersViaAPI(guildId);
+        
+        if (apiMembers.length === 0) {
+            throw new Error('No members found');
+        }
+        
+        currentMembers = apiMembers;
+        updateProgress(100, 100);
+        updateStats();
+        refreshOutput();
+        showPreview();
+        showSuccess(`Fetched ${currentMembers.length} members`);
+        
+    } catch (err) {
+        throw err;
+    }
+}
+
+async function fetchMembersViaAPI(guildId) {
+    const headers = {
+        'Authorization': discordToken,
+        'Content-Type': 'application/json'
+    };
+    
+    const members = [];
+    let after = '0';
+    let batchCount = 0;
+    
+    try {
+        while (true) {
+            batchCount++;
+            const url = `https://discord.com/api/v9/guilds/${guildId}/members?limit=1000&after=${after}`;
+            const res = await fetch(url, { headers });
+            
+            if (!res.ok) {
+                throw new Error(`API Error: ${res.status}`);
             }
-
-            let outputText;
             
-            if (currentFormat === 'json') {
-                outputText = JSON.stringify(currentMembers, null, 2);
-            } else if (currentFormat === 'csv') {
-                outputText = makeCSV();
-            } else if (currentFormat === 'html') {
-                outputText = makeHTML();
-            } else if (currentFormat === 'txt') {
-                outputText = makeTXT();
-            }
+            const batch = await res.json();
+            if (batch.length === 0) break;
             
-            outputArea.value = outputText;
-            exportBtn.disabled = false;
-        }
-
-        function makeCSV() {
-            const headers = ['ID', 'Username', 'Display Name', 'Bot', 'Joined Date', 'Roles', 'Boosting Since'];
-            const rows = currentMembers.map(member => [
-                member.id,
-                `"${member.username}"`,
-                `"${member.nickname || member.global_name || member.username}"`,
-                member.is_bot ? 'Yes' : 'No',
-                member.joined,
-                `"${(member.roles || []).join(', ')}"`,
-                member.boosting || ''
-            ]);
-            
-            return [headers.join(','), ...rows.map(row => row.join(','))].join('\n');
-        }
-
-        function makeTXT() {
-            let txt = `Discord Server Member List
-Generated by DiscordServerScraper
-Date: ${new Date().toLocaleString()}
-========================================
-
-Total Members: ${currentMembers.length}
-Bots: ${currentMembers.filter(m => m.is_bot).length}
-Unique Roles: ${roleSet.size}
-
-MEMBERS LIST:
-========================================
-`;
-
-            currentMembers.forEach((member, index) => {
-                const displayName = member.nickname || member.global_name || member.username;
-                const tagShow = member.tag !== '0' ? '#' + member.tag : '';
-                
-                txt += `${index + 1}. ${displayName}${tagShow}\n`;
-                txt += `   ID: ${member.id}\n`;
-                txt += `   Bot: ${member.is_bot ? 'Yes' : 'No'}\n`;
-                txt += `   Joined: ${formatDate(member.joined)}\n`;
-                txt += `   Roles: ${member.roles.length > 0 ? member.roles.join(', ') : 'None'}\n`;
-                if (member.boosting) {
-                    txt += `   Boosting since: ${formatDate(member.boosting)}\n`;
+            batch.forEach(member => {
+                if (member.user) {
+                    const memberData = {
+                        id: member.user.id,
+                        username: member.user.username || 'Unknown',
+                        discriminator: member.user.discriminator || '0',
+                        global_name: member.user.global_name || member.user.username,
+                        avatar_hash: member.user.avatar,
+                        is_bot: member.user.bot || false,
+                        nickname: member.nick || null,
+                        joined: member.joined_at || new Date().toISOString(),
+                        roles: member.roles || [],
+                        boosting: member.premium_since || null,
+                        pending: member.pending || false
+                    };
+                    members.push(memberData);
+                    
+                    member.roles.forEach(role => roleSet.add(role));
                 }
-                txt += '\n';
             });
-
-            return txt;
-        }
-
-        function makeHTML() {
-            const botCount = currentMembers.filter(m => m.is_bot).length;
-            const boostCount = currentMembers.filter(m => m.boosting).length;
             
-            return `<!DOCTYPE html>
+            updateProgress(members.length, members.length + 100);
+            showSuccess(`Batch ${batchCount}: ${members.length} members...`);
+            
+            after = batch[batch.length - 1].user.id;
+            
+            if (batch.length < 1000) break;
+            
+            const remaining = res.headers.get('X-RateLimit-Remaining');
+            if (remaining === '0') {
+                const reset = res.headers.get('X-RateLimit-Reset');
+                const waitTime = (parseInt(reset) * 1000) - Date.now();
+                if (waitTime > 0) {
+                    await new Promise(r => setTimeout(r, waitTime + 1000));
+                }
+            }
+        }
+        
+        return members;
+        
+    } catch (err) {
+        throw new Error(`Failed to fetch members: ${err.message}`);
+    }
+}
+
+exportBtn.addEventListener('click', function() {
+    saveToFile();
+});
+
+function updateProgress(now, total) {
+    const percent = Math.min((now / total) * 100, 100);
+    progressFill.style.width = `${percent}%`;
+    progressText.textContent = `Progress: ${now} members`;
+}
+
+function updateStats() {
+    const botTotal = currentMembers.filter(m => m.is_bot).length;
+    const onlineGuess = Math.floor(currentMembers.length * 0.3);
+    
+    document.getElementById('totalCount').textContent = currentMembers.length;
+    document.getElementById('botCount').textContent = botTotal;
+    document.getElementById('roleCount').textContent = roleSet.size;
+    document.getElementById('onlineEst').textContent = onlineGuess;
+    
+    document.getElementById('memberCount').textContent = `${currentMembers.length} Members`;
+}
+
+function refreshOutput() {
+    if (currentMembers.length === 0) {
+        outputArea.value = '';
+        exportBtn.disabled = true;
+        return;
+    }
+
+    let outputText;
+    
+    if (currentFormat === 'json') {
+        outputText = JSON.stringify(currentMembers, null, 2);
+    } else if (currentFormat === 'csv') {
+        outputText = makeCSV();
+    } else if (currentFormat === 'html') {
+        outputText = makeHTML();
+    }
+    
+    outputArea.value = outputText;
+    exportBtn.disabled = false;
+}
+
+function makeCSV() {
+    const headers = ['ID', 'Username', 'Display Name', 'Bot', 'Joined Date', 'Roles'];
+    const rows = currentMembers.map(member => [
+        member.id,
+        `"${member.username}"`,
+        `"${member.nickname || member.global_name || member.username}"`,
+        member.is_bot ? 'Yes' : 'No',
+        member.joined,
+        `"${member.roles.join(', ')}"`
+    ]);
+    
+    return [headers.join(','), ...rows.map(row => row.join(','))].join('\n');
+}
+
+function makeHTML() {
+    const botCount = currentMembers.filter(m => m.is_bot).length;
+    
+    return `<!DOCTYPE html>
 <html>
 <head>
-    <title>Discord Members - DiscordServerScraper</title>
+    <title>Discord Members Export</title>
     <style>
-        body { background: #f5f5f5; font-family: Arial, sans-serif; margin: 30px; }
-        .container { max-width: 1400px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 3px solid #000; }
-        .header { background: #000; color: #ff0000; padding: 25px; border-radius: 10px; text-align: center; margin-bottom: 30px; }
-        h1 { margin: 0; font-size: 2.5rem; }
-        .subtitle { color: #ccc; margin-top: 10px; }
-        .stats { display: flex; justify-content: space-around; margin: 25px 0; }
-        .stat { background: #000; color: #ff0000; padding: 20px; border-radius: 8px; text-align: center; flex: 1; margin: 0 10px; border: 2px solid #ff0000; }
-        .stat-number { font-size: 2.5rem; font-weight: bold; }
-        .member-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 30px; }
-        .member-item { background: #fff; border: 2px solid #000; border-radius: 8px; padding: 15px; display: flex; align-items: center; gap: 15px; transition: all 0.3s; }
-        .member-item:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,0,0,0.1); border-color: #ff0000; }
-        .avatar { width: 60px; height: 60px; border-radius: 50%; border: 2px solid #000; background: linear-gradient(135deg, #ff0000, #990000); overflow: hidden; }
-        .avatar img { width: 100%; height: 100%; object-fit: cover; }
-        .member-info { flex: 1; }
-        .member-name { font-weight: bold; color: #000; margin-bottom: 5px; }
-        .member-id { font-size: 0.8rem; color: #666; font-family: monospace; margin-bottom: 5px; }
-        .member-meta { font-size: 0.8rem; color: #666; }
-        .badge { background: #ff0000; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-left: 5px; }
-        .bot-badge { background: #ff0000; }
-        .boost-badge { background: #9c27b0; }
-        .pending-badge { background: #ff9900; }
-        .footer { margin-top: 40px; text-align: center; color: #666; font-size: 0.9rem; }
-        .summary { background: #ffe6e6; padding: 20px; border-radius: 8px; margin: 20px 0; border: 2px solid #ff0000; }
-        .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; text-align: center; }
-        .summary-item { background: white; padding: 15px; border-radius: 8px; border: 2px solid #000; }
-        .summary-number { font-size: 1.5rem; font-weight: bold; color: #ff0000; }
+        body { font-family: Arial; margin: 20px; }
+        .member { border: 1px solid #ccc; padding: 10px; margin: 5px; }
+        .bot { background: #ffe6e6; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Discord Member Export</h1>
-            <div class="subtitle">Generated by DiscordServerScraper | Made by Kerosene</div>
+    <h1>Discord Members Export</h1>
+    <p>Total: ${currentMembers.length} | Bots: ${botCount}</p>
+    ${currentMembers.map(m => `
+        <div class="member ${m.is_bot ? 'bot' : ''}">
+            <strong>${m.username}</strong> (${m.id})<br>
+            ${m.is_bot ? '<em>BOT</em>' : ''}
         </div>
-        
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-number">${currentMembers.length}</div>
-                <div>Total Members</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">${botCount}</div>
-                <div>Bots</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">${roleSet.size}</div>
-                <div>Unique Roles</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">${boostCount}</div>
-                <div>Boosters</div>
-            </div>
-        </div>
-        
-        <div class="summary">
-            <h3 style="margin-top: 0; color: #000;">Server Summary</h3>
-            <div class="summary-grid">
-                <div class="summary-item">
-                    <div class="summary-number">${currentMembers.length}</div>
-                    <div>Total Members</div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-number">${botCount}</div>
-                    <div>Bots</div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-number">${roleSet.size}</div>
-                    <div>Unique Roles</div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-number">${boostCount}</div>
-                    <div>Boosters</div>
-                </div>
-            </div>
-        </div>
-        
-        <h2 style="color: #000; margin-bottom: 20px;">All Members (${currentMembers.length})</h2>
-        <div class="member-grid">
-            ${currentMembers.map(member => {
-                const displayName = member.nickname || member.global_name || member.username;
-                const tagShow = member.tag !== '0' ? '#' + member.tag : '';
-                const firstLetter = member.username?.charAt(0).toUpperCase() || '?';
-                const avatarUrl = member.avatar_hash 
-                    ? `https://cdn.discordapp.com/avatars/${member.id}/${member.avatar_hash}.png?size=128`
-                    : null;
-                
-                return `
-                <div class="member-item">
-                    <div class="avatar">
-                        ${avatarUrl ? `<img src="${avatarUrl}" alt="${displayName}">` : firstLetter}
-                    </div>
-                    <div class="member-info">
-                        <div class="member-name">
-                            ${displayName}${tagShow}
-                            ${member.is_bot ? '<span class="badge bot-badge">BOT</span>' : ''}
-                            ${member.boosting ? '<span class="badge boost-badge">BOOST</span>' : ''}
-                            ${member.pending ? '<span class="badge pending-badge">PENDING</span>' : ''}
-                        </div>
-                        <div class="member-id">ID: ${member.id}</div>
-                        <div class="member-meta">
-                            Joined: ${formatDate(member.joined)}<br>
-                            Roles: ${member.roles.length}
-                        </div>
-                    </div>
-                </div>
-                `;
-            }).join('')}
-        </div>
-        
-        <div class="footer">
-            <p>Exported on: ${new Date().toLocaleString()}</p>
-            <p>Tool: DiscordServerScraper | Kerosene</p>
-        </div>
-    </div>
+    `).join('')}
 </body>
 </html>`;
-        }
+}
 
-        function saveToFile() {
-            const data = outputArea.value;
-            const timeStamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
-            let mime, ext;
-            
-            if (currentFormat === 'json') {
-                mime = 'application/json';
-                ext = 'json';
-            } else if (currentFormat === 'csv') {
-                mime = 'text/csv';
-                ext = 'csv';
-            } else if (currentFormat === 'html') {
-                mime = 'text/html';
-                ext = 'html';
-            } else if (currentFormat === 'txt') {
-                mime = 'text/plain';
-                ext = 'txt';
-            }
+function saveToFile() {
+    const data = outputArea.value;
+    const timeStamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
+    let mime, ext;
+    
+    if (currentFormat === 'json') {
+        mime = 'application/json';
+        ext = 'json';
+    } else if (currentFormat === 'csv') {
+        mime = 'text/csv';
+        ext = 'csv';
+    } else if (currentFormat === 'html') {
+        mime = 'text/html';
+        ext = 'html';
+    } else if (currentFormat === 'txt') {
+        mime = 'text/plain';
+        ext = 'txt';
+    } else if (currentFormat === 'i64') {
+        mime = 'application/octet-stream';
+        ext = 'i64';
+    }
 
-            const blob = new Blob([data], { type: mime });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `discord-members-${timeStamp}.${ext}`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-        }
+    const blob = new Blob([data], { type: mime });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `discord-members-${timeStamp}.${ext}`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+}
 
-        function formatDate(dateStr) {
-            if (!dateStr) return 'Unknown';
-            const d = new Date(dateStr);
-            return d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
-        }
+function showPreview() {
+    previewList.innerHTML = '';
+    
+    if (currentMembers.length === 0) {
+        memberPreview.style.display = 'none';
+        return;
+    }
+    
+    currentMembers.forEach(member => {
+        const card = document.createElement('div');
+        card.className = 'member-card';
+        
+        const firstLetter = member.username?.charAt(0).toUpperCase() || '?';
+        
+        card.innerHTML = `
+            <div class="member-avatar">${firstLetter}</div>
+            <div class="member-details">
+                <div class="member-name">
+                    ${member.username}
+                    ${member.is_bot ? '<span class="bot-badge">BOT</span>' : ''}
+                </div>
+                <div class="member-id">ID: ${member.id}</div>
+            </div>
+        `;
+        
+        previewList.appendChild(card);
+    });
+    
+    memberPreview.style.display = 'block';
+}
 
-        function startLoading() {
-            loadingEl.style.display = 'block';
-            scrapeBtn.disabled = true;
-            scrapeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Working...';
-        }
+function startLoading() {
+    loadingEl.style.display = 'block';
+    scrapeBtn.disabled = true;
+    fetchServersBtn.disabled = true;
+}
 
-        function stopLoading() {
-            loadingEl.style.display = 'none';
-            scrapeBtn.disabled = false;
-            scrapeBtn.innerHTML = '<i class="fas fa-download"></i> Get Member List';
-        }
+function stopLoading() {
+    loadingEl.style.display = 'none';
+    scrapeBtn.disabled = false;
+    fetchServersBtn.disabled = false;
+}
 
-        function showPreview() {
-            memberPreview.style.display = 'block';
-            if (searchBox) searchBox.style.display = 'block';
-            if (filterButtons) filterButtons.style.display = 'flex';
-        }
+function showSuccess(msg) {
+    successText.textContent = msg;
+    successMsg.style.display = 'flex';
+    errorMsg.style.display = 'none';
+}
 
-        function showSuccess(msg) {
-            successText.textContent = msg;
-            successMsg.style.display = 'flex';
-            errorMsg.style.display = 'none';
-        }
+function showError(msg) {
+    errorText.textContent = msg;
+    errorMsg.style.display = 'flex';
+    successMsg.style.display = 'none';
+}
 
-        function showError(msg) {
-            errorText.textContent = msg;
-            errorMsg.style.display = 'flex';
-            successMsg.style.display = 'none';
-            stopLoading();
-        }
-
-        function resetDisplay() {
-            currentMembers = [];
-            filteredMembers = [];
-            roleSet = new Set();
-            outputArea.value = '';
-            previewList.innerHTML = '';
-            memberPreview.style.display = 'none';
-            progressBox.style.display = 'none';
-            progressFill.style.width = '0%';
-            successMsg.style.display = 'none';
-            errorMsg.style.display = 'none';
-            exportBtn.disabled = true;
-            
-            if (searchBox) {
-                searchBox.style.display = 'none';
-                searchInput.value = '';
-            }
-            if (filterButtons) {
-                filterButtons.style.display = 'none';
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
-                currentFilter = 'all';
-            }
-            
-            profileDisplay.style.display = 'none';
-            
-            document.getElementById('totalCount').textContent = '0';
-            document.getElementById('botCount').textContent = '0';
-            document.getElementById('roleCount').textContent = '0';
-            document.getElementById('onlineEst').textContent = '0';
-            
-            const memberCountElement = document.getElementById('memberCount');
-            if (memberCountElement) {
-                memberCountElement.textContent = '0 Members';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const testBtn = document.createElement('button');
-            testBtn.className = 'btn';
-            testBtn.style.marginTop = '15px';
-            testBtn.innerHTML = '<i class="fas fa-vial"></i> Load Test Data';
-            testBtn.onclick = loadSample;
-            document.querySelector('.panel:first-child').appendChild(testBtn);
-            
-            const clearBtn = document.createElement('button');
-            clearBtn.className = 'btn secondary-btn';
-            clearBtn.style.marginTop = '10px';
-            clearBtn.innerHTML = '<i class="fas fa-trash"></i> Clear All Data';
-            clearBtn.onclick = resetDisplay;
-            document.querySelector('.panel:first-child').appendChild(clearBtn);
-        });
-
-        function loadSample() {
-            currentMembers = [
-                {
-                    id: "123456789012345678",
-                    username: "SampleUser",
-                    tag: "1234",
-                    global_name: "Sample User",
-                    avatar_hash: "abc123",
-                    is_bot: false,
-                    nickname: "Test Nick",
-                    joined: "2023-03-15T14:30:00.000Z",
-                    roles: ["123", "456"],
-                    boosting: null,
-                    pending: false
-                },
-                {
-                    id: "234567890123456789",
-                    username: "HelperBot",
-                    tag: "0",
-                    global_name: null,
-                    avatar_hash: "def456",
-                    is_bot: true,
-                    nickname: null,
-                    joined: "2022-11-20T09:15:00.000Z",
-                    roles: ["123"],
-                    boosting: null,
-                    pending: false
-                },
-                {
-                    id: "345678901234567890",
-                    username: "AnotherPerson",
-                    tag: "5678",
-                    global_name: "Friendly User",
-                    avatar_hash: "ghi789",
-                    is_bot: false,
-                    nickname: "GamerTag",
-                    joined: "2023-06-10T16:45:00.000Z",
-                    roles: ["456"],
-                    boosting: "2023-08-01T00:00:00.000Z",
-                    pending: false
-                }
-            ];
-            
-            roleSet = new Set(["123", "456"]);
-            updateStats();
-            refreshOutput();
-            showPreview();
-            showSuccess('Loaded sample data - 3 members');
-        }
-    </script>
+function resetDisplay() {
+    currentMembers = [];
+    roleSet = new Set();
+    outputArea.value = '';
+    previewList.innerHTML = '';
+    memberPreview.style.display = 'none';
+    progressBox.style.display = 'none';
+    exportBtn.disabled = true;
+    
+    document.getElementById('totalCount').textContent = '0';
+    document.getElementById('botCount').textContent = '0';
+    document.getElementById('roleCount').textContent = '0';
+    document.getElementById('onlineEst').textContent = '0';
+}
+</script>
 </body>
 </html>
